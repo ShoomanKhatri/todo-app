@@ -35,6 +35,15 @@ export default function Home() {
       {/* movies list */}
       <div className="grid grid-cols-2 gap-5 mt-5">
         {/* grid item */}
+        {
+          todos.map((item:any,i:any)=>{
+            return(
+
+            )
+          })
+        }
+
+
         <div className="shadow p-4">
           <div className="flex justify-between text-lg">
             <span className="shadow rounded-r-full h-8 w-8 text-center my-auto">
