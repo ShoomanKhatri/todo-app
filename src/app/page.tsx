@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
       {/* movies list */}
       <div className="grid grid-cols-2 gap-5 mt-5">
         {/* grid item */}
+
         {
           todos.map((item:any,i:any)=>{
             return(
@@ -42,7 +44,6 @@ export default function Home() {
             )
           })
         }
-
 
         <div className="shadow p-4">
           <div className="flex justify-between text-lg">
