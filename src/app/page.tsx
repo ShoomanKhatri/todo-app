@@ -9,9 +9,22 @@ export default function Home() {
   ]);
 
   const [inputVal, setInput] = useState("");
-  const [id, setId] = useState("");
+  const [id, setId] = useState(0);
 
-  console.log(inputVal,id);
+  // console.log(inputVal,id);
+
+  // function
+
+  const addItem = () => {
+    setTodos([...todos, { movie: inputVal, id: id }]);
+    setInput("");
+    setId(0);
+  };
+
+  const editItem = (id: any) => {
+    let obj: any = todos.find((item) => item.id == id);
+    console.log(obj);
+  };
 
   return (
     <div className="max-w-4xl bg-orange-400 mx-auto p-5">
@@ -27,13 +40,16 @@ export default function Home() {
           className="w-[80%] p-2 ml-3 text-lg border-b focus:outline-none"
         />
         <input
-        type="number"
-        value={id}
-        onChange={(e:any)=>setId(e.target.value)}
+          type="number"
+          value={id}
+          onChange={(e: any) => setId(e.target.value)}
           placeholder="write id"
           className="w-[20%] p-2 ml-3 text-lg border-b focus:outline-none"
         />
-        <button className="bg-blue-500 w-[20%] text-white p-2 rounded hover:bg-blue-400">
+        <button
+          onClick={addItem}
+          className="bg-blue-500 w-[20%] text-white p-2 rounded hover:bg-blue-400"
+        >
           Add Movie
         </button>
       </div>
@@ -59,8 +75,16 @@ export default function Home() {
               </div>
 
               {/* data div */}
-              <div className="mt-5 text-[30px] text-gray-700">item.movie</div>
-              <div className="text-right cursor-pointer">Edit</div>
+              <div className="mt-5 text-[30px] text-gray-700">{item.movie}</div>
+              <div
+                onClick={() => {
+                  editItem(item.id);
+                }}
+                className="text-right cursor-pointer"
+              >
+                Edit
+              </div>
+              <h2 className="text-green">id:{item.id}</h2>
             </div>
           );
         })}
