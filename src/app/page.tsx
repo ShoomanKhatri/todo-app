@@ -23,6 +23,8 @@ export default function Home() {
 
   const editItem = (id: any) => {
     let obj: any = todos.find((item) => item.id == id);
+    setInput(obj.movie);
+    setId(obj.id);
     console.log(obj);
   };
 
