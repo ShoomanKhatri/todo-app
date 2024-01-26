@@ -16,6 +16,15 @@ export default function Home() {
   // function
 
   const addItem = () => {
+    let obj: any = todos.find((item) => item.id == id);
+
+    if (obj) {
+      let newArray = todos.filter((item) => item.id !== obj.id);
+      setTodos([...newArray, { movie: inputVal, id: id }]);
+      setInput("");
+      setId(0);
+      return
+    }
     setTodos([...todos, { movie: inputVal, id: id }]);
     setInput("");
     setId(0);
