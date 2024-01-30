@@ -84,7 +84,11 @@ export default function Home() {
 
         {todos.map((item: any, i: any) => {
           return (
-            <div className="shadow p-4" key={i} style={{background:"#FF9BD2",borderRadius:"10px"}}>
+            <div
+              className="shadow p-4"
+              key={i}
+              style={{ background: "#FF9BD2", borderRadius: "10px" }}
+            >
               <div className="flex justify-between text-lg">
                 <span className="shadow rounded-r-full h-8 w-8 text-center my-auto">
                   {i + 1}
@@ -98,7 +102,9 @@ export default function Home() {
               </div>
 
               {/* data div */}
-              <div className="mt-5 text-[30px]" style={{color:"#FF9BD2"}}>{item.movie}</div>
+              <div className="mt-5 text-[30px]" style={{ color: "#FF9BD2" }}>
+                {item.movie}
+              </div>
               <div
                 onClick={() => {
                   editItem(item.id);
@@ -116,4 +122,4 @@ export default function Home() {
   );
 }
 
-//1  2
+//1   2 3
