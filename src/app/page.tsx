@@ -56,7 +56,7 @@ export default function Home() {
           type="text"
           value={inputVal}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="write movie name"
+          placeholder="write item name"
           className="w-[80%] p-2 ml-3 text-lg border-b focus:outline-none"
         />
         <input
@@ -70,13 +70,13 @@ export default function Home() {
           onClick={addItem}
           className="bg-pink-700 w-[20%] text-white p-2 rounded hover:bg-pink-600"
         >
-          Add Movie
+          Add Items
         </button>
       </div>
 
       {/* end input div */}
 
-      <h1 className="text-center text-[40px] underline mt-5">Movies List</h1>
+      <h1 className="text-center text-[40px] underline mt-5">Added Items</h1>
 
       {/* movies list */}
       <div className="grid grid-cols-2 gap-5 mt-5">
@@ -87,15 +87,15 @@ export default function Home() {
             <div
               className="shadow p-4"
               key={i}
-              style={{ background: "#FF9BD2", borderRadius: "10px" }}
+              style={{ background: "white", borderRadius: "10px" }}
             >
               <div className="flex justify-between text-lg">
-                <span className="shadow rounded-r-full h-8 w-8 text-center my-auto">
+                <span className="shadow rounded-full h-8 w-8 text-center my-auto bg-pink-400 text-white">
                   {i + 1}
                 </span>
                 <span
                   onClick={() => delItem(item.id)}
-                  className="shadow rounded-r-full h-8 w-8 text-center my-auto cursor-pointer text-red-700"
+                  className="shadow rounded-full h-8 w-8 text-center my-auto cursor-pointer bg-green-500 text-red-600 font-bold"
                 >
                   X
                 </span>
@@ -121,5 +121,3 @@ export default function Home() {
     </div>
   );
 }
-
-//1   2 3 4 5
