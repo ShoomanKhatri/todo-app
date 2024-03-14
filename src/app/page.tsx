@@ -4,8 +4,8 @@ import { useState } from "react";
 export default function Home() {
   //define state
   const [todos, setTodos] = useState([
-    { movie: "Django Unchainged", id: 1 },
-    { movie: "catch me if you can", id: 2 },
+    { movie: "Limitless", id: 1 },
+    { movie: "Alita:Battle Angel", id: 2 },
   ]);
 
   const [inputVal, setInput] = useState("");
